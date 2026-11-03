@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "AllAboard/Public/Core/AllAboardPlayerController.h"
+#include "Core/AllAboardPlayerController.h"
 
 #include "EnhancedInputSubsystems.h"
 #include "InputMappingContext.h"

@@ -1,12 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "AllAboard/Public/Character/PlayerCharacter.h"
+#include "Character/PlayerCharacter.h"
 
 #include "EnhancedInputComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Engine/Engine.h"
-#include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 
 // Sets default values

@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "AllAboard/Public/Character/BaseCharacter.h"
+#include "Character/BaseCharacter.h"
 
 
 // Sets default values
