@@ -48,10 +48,10 @@ protected:
 	TObjectPtr<UPhysicsHandleComponent> PhysicsHandle;
 	
 	UPROPERTY(EditAnywhere, Category = "Interaction")
-	float InteractionDistance = 50.f;
+	float InteractionDistance = 70.f;
 	
 	UPROPERTY(EditAnywhere, Category = "Interaction")
-	float HoldDistance = 50.f;
+	float HoldDistance = 70.f;
 	
 	void Interact();
 	
