@@ -10,6 +10,8 @@ struct FInputActionValue;
 class UInputAction;
 class UCameraComponent;
 class USpringArmComponent;
+class UPhysicsHandleComponent;
+class UPrimitiveComponent;
 
 UCLASS()
 class ALLABOARD_API APlayerCharacter : public ACharacter
@@ -42,12 +44,23 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Input Actions")
 	TObjectPtr<UInputAction> InteractAction;
 
+	UPROPERTY(VisibleAnywhere, Category = "Interaction")
+	TObjectPtr<UPhysicsHandleComponent> PhysicsHandle;
+	
+	UPROPERTY(EditAnywhere, Category = "Interaction")
+	float InteractionDistance = 50.f;
+	
+	UPROPERTY(EditAnywhere, Category = "Interaction")
+	float HoldDistance = 50.f;
+	
 	void Interact();
 	
 	void Move(const FInputActionValue& Value);
 	
 	void OnJumpStart(const FInputActionValue& Value);
 	void OnJumpCancelled(const FInputActionValue& Value);
+	
+	FRotator HeldRotation;
 	
 public:
 	// Called every frame
