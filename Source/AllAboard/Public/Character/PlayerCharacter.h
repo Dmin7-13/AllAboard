@@ -52,6 +52,9 @@ protected:
 	
 	UPROPERTY(EditAnywhere, Category = "Interaction")
 	float HoldDistance = 70.f;
+
+	UPROPERTY(EditAnywhere, Category = "Interaction")
+	float HoldHeightOffset = 20.f;
 	
 	void Interact();
 	
@@ -61,6 +64,7 @@ protected:
 	void OnJumpCancelled(const FInputActionValue& Value);
 	
 	FRotator HeldRotation;
+	float HeldVerticalOffset = 0.f;
 	
 public:
 	// Called every frame

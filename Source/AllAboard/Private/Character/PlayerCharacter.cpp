@@ -100,7 +100,8 @@ void APlayerCharacter::Interact()
 		}
 		
 		HeldRotation = HitComponent->GetComponentRotation();
-	
+		HeldVerticalOffset = HitComponent->GetComponentLocation().Z - GetActorLocation().Z + HoldHeightOffset;
+
 		PhysicsHandle->GrabComponentAtLocationWithRotation(
 			HitComponent,
 			NAME_None,
@@ -145,15 +146,10 @@ void APlayerCharacter::Tick(float DeltaTime)
 		return;
 	}
 	
-	FVector Direction = GetActorRightVector();
-	Direction.Y = 5.f;
-	Direction.Normalize();
-	
-	const FVector CurrentLocation = HeldComponent->GetComponentLocation();
+	const FVector Direction = GetActorRightVector();
+
 	FVector TargetLocation = GetActorLocation() + Direction * HoldDistance;
-	
-	TargetLocation.Z = CurrentLocation.Z;
-	
+	TargetLocation.Z = GetActorLocation().Z + HeldVerticalOffset;
+
 	PhysicsHandle->SetTargetLocationAndRotation(TargetLocation, HeldRotation);
 }
-
